@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Transaction</title>
+    <link rel="stylesheet" href="../css/new-transaction.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="icon" type="image/x-png" href="../images/favicon.png">
+</head>
+<body>
+    <div id="new-transaction">
+        <h1 id="title">New transaction</h1>
+        <button id="close-button"></button>
+        <form name="newtransaction" onsubmit="return validateFormInputs()" method="post">
+            <div class="inputs">
+                <label for="type">Type</label><br>
+                <select id="type" name="type" >
+                    <option value="stockus" selected>stock(US)</option>
+                    <option value="stock(BR)" selected>stock(BR)</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <input type="button" value="buy" id="buy" onclick="clickBuy()">
+                <input type="button" value="sell" id="sell" onclick="clickSell()">
+                <input type="text" id="buy/sell" name="buy/sell" hidden>
+            </div>
+            <div class="inputs">
+                <label for="asset">Asset</label><br>
+                <input type="text" name="asset" id="asset">
+            </div>
+            <div class="inputs">
+                <label for="date">Date</label><br>
+                <input type="date" name="date" id="date" placeholder="01/11/1999">
+            </div>
+            <div class="inputs">
+                <label for="price">Price</label><br>
+                <input type="number" name="price" id="price" min="0">
+            </div>
+            <div class="inputs">
+                <label for="quantity">Quantity</label><br>
+                <input type="number" name="quantity" id="quantity" min="0">
+            </div>
+            <hr>
+            <p id="total">TOTAL: $0.00</p>
+            <input type="submit" value="confirm" id="confirm">
+        </form>
+    </div>
+</body>
+</html>
+<script src="../javascript/new-transaction.js"></script>

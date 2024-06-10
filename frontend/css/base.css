@@ -1,0 +1,232 @@
+:root {
+    --dark_green: #02231c;
+    --light_green: #00FD8F;
+    --white: #ffffff;
+  }
+
+html {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0%;
+    display: grid;
+}
+
+header {
+    margin: 0%;
+    padding: 0px;
+    position: fixed;
+    background-color: var(--dark_green);
+    width: 100%;
+    font-size: var(--header_font_size);
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+ul{
+    margin: 0%;
+    color: var(--white);
+    list-style: none;
+    
+}
+
+header ul li {
+    margin: 0%;
+    color: var(--white);
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+header ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#user {
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    border: 0.15rem solid var(--light_green);
+    border-radius: 50%;
+    height: 1.8rem;
+    width: 1.8rem;
+    top: 1rem;
+    right: 1rem;
+}
+
+#menu-span {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.529);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    width: 3rem;
+    right: 0.9rem;
+    margin-top: 0.6rem;
+    
+    position: absolute;
+    z-index: 1;
+}
+#menu {
+    visibility: hidden;
+    background-color: var(--dark_green);
+    color: #fff;
+    border-radius: 0rem 0rem 0rem 0.3rem; 
+    font-size: 0.7rem;
+    width: 7rem;
+    right: 0%;
+    top: 3.9rem;
+    padding: 0px;
+    
+    position: absolute;
+    z-index: 1;
+}
+
+#menu button {
+    border: none;
+    border-top: 1px solid var(--light_green);
+    width: 7rem;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#menu button:hover {
+    background-color: var(--light_green);
+    cursor: pointer;
+    color: var(--dark_green);
+}
+
+#user-initials{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0%;
+    margin: 0%;
+}
+
+#user:hover {
+    cursor: pointer;
+    color: #02231c;
+    background-color: #00FD8F;
+} 
+
+#user:hover #menu-span{
+    visibility: visible;
+} 
+
+#current-page, #current-page a {
+    border: 0.1rem solid var(--light_green);
+    border-radius: 1rem;
+    padding: 0.3rem;
+    background-color: var(--light_green);
+    color: var(--dark_green);
+}
+
+main {
+    margin-top: 4rem;
+}
+
+h1 {
+    margin-left: 1rem;
+    position: relative;
+    color: var(--dark_green);
+    font-size: 2rem;
+}
+
+table {
+    border-radius: 0.6rem;
+    background-color: var(--dark_green);
+    color: var(--white);
+    border: 1px solid var(--white);
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    width: 65rem;
+
+}
+
+th, td {
+    border: 1px solid var(--white);
+    padding: 0.5rem;
+}
+
+#table-grid {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto 65rem auto;
+}
+
+tr:hover{
+    background-color: var(--light_green);
+    color: var(--dark_green);
+}
+
+#delete-account-modal{
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark_green);
+    border-radius: 0.6rem;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+
+    z-index: 2;
+}
+
+#delete-account-modal button{
+    height: 2rem;
+    border-radius: 0.6rem;
+    padding: 0%;
+    border: 0px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+#delete-confirm{
+    background-color: var(--light_green);
+}
+
+#delete-cancel {
+    background-color: red;
+}
+
+.overlay {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+main{
+    margin-bottom: 2rem;
+}
+
+footer{
+    margin: 0%;
+    position: relative;
+    bottom: 0%;
+    background-color: #00FD8F;
+    width: 100%;
+    left: 0%;
+    padding-left: 1rem;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}

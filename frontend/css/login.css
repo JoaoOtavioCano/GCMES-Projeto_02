@@ -1,0 +1,97 @@
+body {
+    background-color: #ffff ;
+}
+#email {
+    padding-left: 10px;
+    width: 340px;
+    height: 62px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 17px;
+    border: 0px;
+}
+#password {
+    padding-left: 10px;
+    width: 340px;
+    height: 62px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 29px;
+    margin-left: 17px;
+    border: 0px;
+}
+#log-in-button {
+    font-weight: bold; 
+    width: 350px; 
+    height: 62px; 
+    border-radius: 10px; 
+    font-size: 20px; 
+    margin-top: 29px; 
+    margin-left: 18px; 
+    border: 0px;
+    background-color: #00FD8F; 
+    color: #02231c;
+    cursor: pointer;
+}
+
+#log-in-button:hover{
+    background-color: rgb(134, 255, 203);
+}
+
+.error{
+    border-radius: 6px;
+    background-color: rgb(244, 92, 92);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 23px;
+    width: 328px;
+    padding-left: 10px;
+}
+
+.fail-login{
+    margin: 0%;
+    display: none;
+    border: 2px solid red;
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    margin-top: 3rem;
+    height: 3rem;
+    padding: 0%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+
+#create-new-account-button {
+    font-weight: bold; 
+    text-decoration: none; 
+    border: 0px;
+    background-color: #ffff; 
+    color: #02231c;
+    width: 260px; 
+    height: 62px; 
+    border-radius: 10px; 
+    font-size: 20px; 
+    margin-top: 18px; 
+    margin-left: 63px;
+    cursor: pointer;
+}
+
+#create-new-account-button:hover {
+    background-color: #dadada;
+}
+
+footer{
+    margin: 0%;
+    position: absolute;
+    bottom: 0%;
+    background-color: #00FD8F;
+    width: 100%;
+    left: 0%;
+    padding-left: 1rem;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}

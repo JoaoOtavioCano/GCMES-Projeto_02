@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="icon" type="image/x-png" href="../images/favicon.png">
+</head>
+<body>
+    <header>
+        <ul>
+            <li id="current-page"><a href="">Portfolio</a></li>
+            <li><a href="/transactions">Transactions</a></li>
+            <li >
+                <div id="user" onclick="openAndCloseMenu()">
+                    <p id="user-initials">Jo</p>
+                </div>
+            </li>
+        </ul>
+        <ul id="menu" >
+            <li><button onclick="logOut()">Log out</button></li>
+            <li><button onclick="areUSureModal()">Delete account</button></li>
+        </ul>
+    </header>
+    <div id="overlay" class="overlay"></div>
+    <div id="delete-account-modal">
+        <h2>Do you relly want to delete your account?</h2>
+        <button id="delete-confirm" onclick="confirmDeletion()">confirm</button>
+        <button id="delete-cancel" onclick="cancelDeletion()">cancel</button>
+    </div>
+    <main>
+        <h1>Overview</h1>
+        <ul id="overview-indicators">
+            <li></li>
+            <li>
+                <div>
+                    <h2 class="indicator-title">Net worth</h2>
+                    <h2 id="net_worth">$XXX,XX</h2>
+                </div>
+            </li>
+            <li></li>
+            <li>
+                <div>
+                    <h2 class="indicator-title">Gain/Loss</h2>
+                    <h2 id="gain_loss">$XXX,XX</h2>
+                    <h3 id="gain_loss_percent">(XX,X%)</h3>
+                </div>
+            </li>
+            <li></li>
+            <li>
+                <div>
+                    <h2 class="indicator-title">Price</h2>
+                    <h2 id="price">$XXX,XX</h2>
+                </div>
+            </li>
+            <li></li>
+        </ul>
+        <div id="table-grid">
+            <div></div>
+            <table id="assets-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Asset</th>
+                    <th>Quantity</th>
+                    <th>Avg. Price</th>
+                    <th>Gain/loss</th>
+                    <th>Gain/loss(%)</th>
+                    <th>Total</th>
+                </tr>
+            </table>
+            <div></div>
+        </div>
+        <h1>Allocation</h1>
+        <div id="allocationChart"></div>
+        <div id="assetTypeChart"></div>
+    </main>
+    <footer>
+        <div>
+            <p>This is a personal project made to study and prectice web development. This software should not be used as a reliable source of information for investing.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script type="module" src="../javascript/portfolio.js"></script>
+<script type="module" src="../javascript/authentication.js"></script>
+<script type="module" src="../javascript/userInitials.js"></script>
+<script src="../javascript/menu.js"></script>
+<script src="../javascript/logout.js"></script>
+<script src="../javascript/delete-account.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>

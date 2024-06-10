@@ -1,0 +1,108 @@
+:root {
+    --dark_green: #02231c;
+    --light_green: #00FD8F;
+    --white: #ffffff;
+  }
+
+#new-transaction-button {
+    font-size: 1.33rem;
+    background-color: var(--light_green);
+    color: var(--dark_green);
+    font-weight: normal;
+    border: 0px;
+    border-radius: 0.6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+#new-transaction-button:hover{
+    background-color: rgb(134, 255, 203);
+}
+
+
+#title-and-button{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 12rem auto 12rem 1rem;
+    grid-template-rows: 4rem;
+    margin-bottom: 2rem;
+}
+
+#transactions-table-grid{
+    padding: 0%;
+    overflow-y: auto;
+    height: 32rem;
+}
+
+#transactions-table-grid tr td{
+    height: 1.6rem;
+}
+
+.date{
+    width: 10rem;
+}
+
+.asset {
+    width: 10.5rem;
+}
+
+.operation{
+    width: 8.5rem;
+}
+
+.quantity {
+    width: 8rem;
+}
+
+.price {
+    width: 8rem;
+}
+
+.transaction-total {
+    border-right: none
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 20;
+    color: red;
+    padding: 0%;
+    margin: 0%;
+    cursor: pointer;
+}
+
+.delete-transaction{
+    width: 0rem;
+    justify-content: center;
+    align-items: center;
+    border-left: none
+}
+
+#table-headers tr th{
+    height: 1.7rem;
+}
+
+#table-headers tr:hover{
+    > :last-child{
+        border-radius: 0rem 0.6rem 0.6rem 0rem;
+    }
+    > :first-child{
+        border-radius: 0.6rem 0rem 0rem 0.6rem;
+    }
+}
+
+#table-headers{
+    border-radius: 0.6rem;
+}
+
+#table-headers:hover{
+    background-color: #00FD8F;
+}
+
+footer{
+    position: absolute;
+}

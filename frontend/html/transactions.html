@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/transactions.css">
+    <link rel="stylesheet" href="../css/new-transaction.css">
+    <link rel="icon" type="image/x-png" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li id="current-page"><a href="">Transactions</a></li>
+            <li >
+                <div id="user" onclick="openAndCloseMenu()">
+                    <p id="user-initials">Jo</p>
+                </div>
+            </li>
+        </ul>
+        <ul id="menu">
+            <li><button onclick="logOut()">Log out</button></li>
+            <li><button onclick="areUSureModal()">Delete account</button></li>
+        </ul>
+    </header>
+    <div id="overlay" class="overlay"></div>
+    <div id="delete-account-modal">
+        <h2>Do you relly want to delete your account?</h2>
+        <button id="delete-confirm" onclick="confirmDeletion()">confirm</button>
+        <button id="delete-cancel" onclick="cancelDeletion()">cancel</button>
+    </div>
+    <div id="new-transaction">
+        <h1 id="title">New transaction</h1>
+        <button id="close-button" onclick="closeModal()"></button>
+        <form name="newtransaction">
+            <div class="inputs">
+                <label for="type">Type</label><br>
+                <select id="type" name="type" >
+                    <option value="stock(US)" selected>stock(US)</option>
+                    <option value="stock(BR)">stock(BR)</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <input type="button" value="buy" id="buy" onclick="clickBuy()">
+                <input type="button" value="sell" id="sell" onclick="clickSell()">
+                <div class="error buy-sell">
+                    <span>teste</span>
+                </div>
+                <input type="text" id="buy/sell" name="buy/sell" hidden>
+            </div>
+            <div class="inputs">
+                <label for="asset">Asset</label><br>
+                <input type="text" name="asset" id="asset">
+                <div class="error asset">
+                    <span>teste</span>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="date">Date</label><br>
+                <input type="date" name="date" id="date" placeholder="01/11/1999">
+                <div class="error date">
+                    <span>teste</span>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="price">Price</label><br>
+                <input type="number" name="price" id="price" min="0">
+                <div class="error price">
+                    <span>teste</span>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="quantity">Quantity</label><br>
+                <input type="number" name="quantity" id="quantity" min="0">
+                <div class="error quantity">
+                    <span>teste</span>
+                </div>
+            </div>
+            <hr>
+            <p id="total">TOTAL: $0.00</p>
+            <input type="button" value="confirm" id="confirm" onclick="newTransaction()">
+        </form>
+    </div>
+    <main>
+        <div id="new-transaction-created-alert">
+            <span>Transaction created successfully!</span>
+        </div>
+        <div id="request-error-alert" class="error">
+            <span></span>
+        </div>
+        <div id="title-and-button">
+            <h1>Transactions</h1>
+            <div></div>
+            <button id="new-transaction-button" onclick="return openModal()">new transaction</button>
+            <div></div>
+        </div>
+        <table id="table-headers">
+            <tr>
+                <th class="date">Date</th>
+                <th class="asset">Asset</th>
+                <th class="operation">Operation</th>
+                <th class="quantity">Quantity</th>
+                <th class="price">Price</th>
+                <th class="transaction-total">Total</th>
+            </tr>
+        </table>
+        <div id="transactions-table-grid">
+            <div></div>
+            <table id="transactions-table">
+            </table>
+            <div></div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>This is a personal project made to study and prectice web development. This software should not be used as a reliable source of information for investing.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script type="module" src="../javascript/transactions.js"></script>
+<script src="../javascript/new-transaction.js"></script>
+<script type="module" src="../javascript/authentication.js"></script>
+<script type="module" src="../javascript/userInitials.js"></script>
+<script src="../javascript/menu.js"></script>
+<script src="../javascript/logout.js"></script>
+<script src="../javascript/delete-account.js"></script>
+<script src="../javascript/delete-transaction.js"></script>
+<script type="module" src="../javascript/transaction-pagination.js"></script>
