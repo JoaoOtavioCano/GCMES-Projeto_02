@@ -1,4 +1,4 @@
-from .database import *
+from .database import Database
 from .emailManager import EmailManager
 from .payloadValidator import PayloadValidator
 
@@ -57,4 +57,3 @@ class ForgotPassword:
         db.addNewPasswordRequest(code, user_id)
 
         return True
-
