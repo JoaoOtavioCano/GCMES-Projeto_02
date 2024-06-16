@@ -1,4 +1,4 @@
-from .database import *
+from .database import Database
 from .emailManager import EmailManager
 from .payloadValidator import PayloadValidator
 
@@ -6,7 +6,7 @@ import random
 import hashlib
 
 class ForgotPassword:
-    def __init__(self, request, payload):
+    def _init_(self, request, payload):
         self.request = request
         self.payload = payload
 
@@ -23,9 +23,9 @@ class ForgotPassword:
 
             email_manager = EmailManager()
 
-            code  = self.__createCode__()
+            code  = self._createCode_()
             
-            saved = self.__saveCodeInDb__(code)
+            saved = self._saveCodeInDb_(code)
 
             if saved:
                 email_manager.sendEmailToCreateNewPassword(email, code)
@@ -37,12 +37,12 @@ class ForgotPassword:
                 self.request.end_headers()
 
 
-    def __createCode__(self):
+    def _createCode_(self):
         code =  hashlib.sha256(str(random.randrange(9999999999)).encode()).hexdigest()
 
         return code
 
-    def __saveCodeInDb__(self, code):
+    def _saveCodeInDb_(self, code):
         db = Database()
 
         email = self.payload["email"]
@@ -57,4 +57,3 @@ class ForgotPassword:
         db.addNewPasswordRequest(code, user_id)
 
         return True
-
