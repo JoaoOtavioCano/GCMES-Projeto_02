@@ -1,5 +1,5 @@
 from .database import Database
-from .dolar import *
+from .dolar import real_to_dolar
 
 import json
 import yfinance as yf
