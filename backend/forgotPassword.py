@@ -6,7 +6,7 @@ import random
 import hashlib
 
 class ForgotPassword:
-    def _init_(self, request, payload):
+    def __init__(self, request, payload):
         self.request = request
         self.payload = payload
 
@@ -23,9 +23,9 @@ class ForgotPassword:
 
             email_manager = EmailManager()
 
-            code  = self._createCode_()
+            code  = self.__createCode__()
             
-            saved = self._saveCodeInDb_(code)
+            saved = self.__saveCodeInDb__(code)
 
             if saved:
                 email_manager.sendEmailToCreateNewPassword(email, code)
@@ -37,12 +37,12 @@ class ForgotPassword:
                 self.request.end_headers()
 
 
-    def _createCode_(self):
+    def __createCode__(self):
         code =  hashlib.sha256(str(random.randrange(9999999999)).encode()).hexdigest()
 
         return code
 
-    def _saveCodeInDb_(self, code):
+    def __saveCodeInDb__(self, code):
         db = Database()
 
         email = self.payload["email"]
