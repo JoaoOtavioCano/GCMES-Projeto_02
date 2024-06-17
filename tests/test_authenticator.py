@@ -18,3 +18,12 @@ def test_validateAuthentication_01(authenticator):
     authenticator.authorization_list["00001"] = "00001#99999999999"
     
     assert authenticator.validateAuthentication(request) == True
+
+
+def test_validateAuthentication_02(authenticator):
+    request = FakeRequest()
+    
+    authenticator.authorization_list["00001"] = "00001#99999999999"
+    
+    assert authenticator.validateAuthentication(request) == False
+    
