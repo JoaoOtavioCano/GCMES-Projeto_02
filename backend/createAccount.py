@@ -1,4 +1,4 @@
-from .database import *
+from .database import Database
 from .payloadValidator import PayloadValidator
 from .possibleErrors import *
 
