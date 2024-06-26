@@ -36,3 +36,10 @@ def test_validateAuthentication_03(authenticator):
     
     assert authenticator.validateAuthentication(request) == False
 
+def test_validateAuthentication_04(authenticator):
+    request = FakeRequest()
+    request.headers["Cookie"] = "authenticationKey=00002#99999999999;"
+    
+    authenticator.authorization_list["00001"] = "00001#99999999999"
+    
+    assert authenticator.validateAuthentication(request) == False
