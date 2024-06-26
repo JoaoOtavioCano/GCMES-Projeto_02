@@ -43,3 +43,11 @@ def test_validateAuthentication_04(authenticator):
     authenticator.authorization_list["00001"] = "00001#99999999999"
     
     assert authenticator.validateAuthentication(request) == False
+    
+def test_validateAuthentication_05(authenticator):
+    request = FakeRequest()
+    request.headers["Cookie"] = "randomCookie=123434;"
+    
+    authenticator.authorization_list["00001"] = "00001#99999999999"
+    
+    assert authenticator.validateAuthentication(request) == False
