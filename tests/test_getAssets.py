@@ -82,3 +82,11 @@ def test_respond(MockTicker, MockDatabase):
         assert calculateTotal(2, 3.3) == 6.6
         assert calculateTotal(-2, 8) == -16
         assert calculateTotal(-3, -5)  ==  15
+        
+        
+    def test_calculateGainLoss():
+        assert calculateGainLoss(15, 10, 1) == 5
+        assert calculateGainLoss(10, 15, 2) == -10
+        assert calculateGainLoss(10, 0, 2) == 20
+        assert calculateGainLoss(0, 15, 4) == -60
+        assert calculateGainLoss(0, 0, 4) == 0
