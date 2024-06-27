@@ -76,3 +76,9 @@ def test_respond(MockTicker, MockDatabase):
 
     # Check wfile write call
     request_handler.wfile.write.assert_called_once_with(json.dumps(expected_response).encode('utf-8'))
+    
+    def test_calculateTotal():
+        assert calculateTotal(10, 10) == 100
+        assert calculateTotal(2, 3.3) == 6.6
+        assert calculateTotal(-2, 8) == -16
+        assert calculateTotal(-3, -5)  ==  15
