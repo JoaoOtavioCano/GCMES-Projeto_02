@@ -1,5 +1,10 @@
 from backend.login import Login, __createAuthenticationKey__
 
+import unittest
+from unittest.mock import MagicMock, patch
+import json
+import bcrypt
+
 def test__createAuthenticationKey__():
     userID = 1
     authKey = __createAuthenticationKey__(userID)
